@@ -17,9 +17,7 @@ const Login = () => {
 	return (
 		<div className='flex items-center justify-center min-h-screen px-4'>
 			<div className='flex flex-col md:flex-row items-center w-full max-w-4xl mx-auto'>
-
 				<div className='flex flex-col items-start justify-start mr-0 md:mr-10 mb-6 md:mb-0 w-full md:w-1/2'>
-					
 							<span className='text-blue-500 text-4xl md:text-5xl ml-0 font-extrabold text-center'>ChatFusion</span>
 				
 					<span className='text-xl md:text-3xl font-semibold text-gray-500 mt-4 ml-0 md:ml-1'>
