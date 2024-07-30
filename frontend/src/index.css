@@ -2,22 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-/* body {
-	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../public/bg.png");
-	background-repeat: no-repeat;
-	background-size:cover;
-	background-position: center;
-} */
 
-body{
-=======
+
 body {
-/* 	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../public/bg.png");
-	background-repeat: no-repeat;
-	background-size:cover;
-	background-position: center; */
->>>>>>> 6780bdbfb0ed0e2537b27fdae2fc699e93acd7ff
 	background-color: white;
 }
 
