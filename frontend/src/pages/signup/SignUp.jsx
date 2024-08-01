@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import GenderCheckbox from "./GenderCheckbox";
 import { useState } from "react";
 import useSignup from "../../hooks/useSignup";
+import { IoLogoWechat } from "react-icons/io5";
 
 const SignUp = () => {
   const [inputs, setInputs] = useState({
@@ -26,24 +27,25 @@ const SignUp = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-center min-w-96 mx-auto">
       <div className="md:w-1/2 p-6 flex flex-col items-center md:items-start">
-        <span className="text-blue-500 text-4xl md:text-5xl font-extrabold text-center md:text-left">
-          ChatFusion
-        </span>
+        <div className="flex items-center text-blue-500 text-4xl md:text-5xl font-extrabold">
+          <IoLogoWechat className="mr-2" />
+          <span>ChatFusion</span>
+        </div>
         <span className="text-base md:text-xl font-semibold text-gray-500 mt-2">
           Connect with your friends and the world around you on ChatFusion
         </span>
       </div>
 
-      <div className="md:w-1/2 p-6 rounded-lg shadow-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 border-2 border-gray-300">
-        <h1 className="text-3xl font-bold text-gray-500 text-center md:text-left">
+      <div className="w-full md:w-1/2 p-6 rounded-2xl shadow-lg bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 border-2 border-gray-300">
+        {/* <h1 className="text-3xl font-bold text-gray-500 text-center md:text-left">
           Welcome to <span className="text-blue-600">ChatFusion</span>
-        </h1>
+        </h1> */}
         <form onSubmit={handleSubmit}>
           <div>
             <input
               type="text"
               placeholder="Enter Full Name"
-              className="w-full input input-bordered h-11 bg-white mt-4 border border-gray-400"
+              className="w-full input input-bordered h-11 bg-white mt-4 border border-gray-400 text-gray-700"
               value={inputs.fullName}
               onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
             />
@@ -53,7 +55,7 @@ const SignUp = () => {
             <input
               type="text"
               placeholder="Enter Username"
-              className="w-full input input-bordered h-11 bg-white mt-4 border border-gray-400"
+              className="w-full input input-bordered h-11 bg-white mt-4 border border-gray-400 text-gray-700"
               value={inputs.username}
               onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
             />
@@ -63,7 +65,7 @@ const SignUp = () => {
             <input
               type="password"
               placeholder="Enter Password"
-              className="w-full input input-bordered h-11 bg-white mt-4 border border-gray-400"
+              className="w-full input input-bordered h-11 bg-white mt-4 border border-gray-400 text-gray-700"
               value={inputs.password}
               onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
             />
@@ -73,7 +75,7 @@ const SignUp = () => {
             <input
               type="password"
               placeholder="Confirm Password"
-              className="w-full input input-bordered h-11 bg-white my-4 border border-gray-400"
+              className="w-full input input-bordered h-11 bg-white my-4 border border-gray-400 text-gray-700"
               value={inputs.confirmPassword}
               onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
             />
@@ -97,7 +99,6 @@ const SignUp = () => {
             <Link
               to={"/login"}
               className="text-md hover:underline cursor-pointer inline-block ml-1 text-semibold text-blue-600"
-              href="#"
             >
               Login->
             </Link>
