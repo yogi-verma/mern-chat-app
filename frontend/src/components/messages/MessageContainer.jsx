@@ -7,6 +7,7 @@ import { useAuthContext } from "../../context/AuthContext";
 
 const MessageContainer = () => {
 	const { selectedConversation, setSelectedConversation } = useConversation();
+	const { authUser } = useAuthContext();
 
 	useEffect(() => {
 		// cleanup function (unmounts)
@@ -20,10 +21,28 @@ const MessageContainer = () => {
 			) : (
 				<>
 					{/* Header */}
-					<div className='bg-blue-600 px-4 py-2 mb-2'>
-						<span className='label-text'>To:</span>{" "}
-						<span className='text-gray-100 font-bold'>{selectedConversation.fullName}</span>
+					<div className='px-4 py-2 mb-2 mt-3 mx-4 flex items-center justify-between border-2 border-gray-300 rounded-2xl shadow-xl cursor-pointer hover:shadow-3xl transition-all duration-300'>
+						<div className='flex flex-col items-center'>
+							<div className='relative w-9 rounded-full'>
+								<img src={authUser.profilePic} alt='user avatar' className='rounded-full' />
+								<span className='absolute bottom-0 right-0 block w-3 h-3 bg-green-500 border-2 border-white rounded-full'></span>
+							</div>
+							<span className='text-gray-700 font-bold mt-2 text-xs'>{authUser.fullName}</span>
+						</div>
+
+						<span className='label-text text-gray-700 font-bold text-3xl'>↹</span>
+
+						<div className='flex flex-col items-center'>
+							<div className='relative w-9 rounded-full'>
+								<img src={selectedConversation.profilePic} alt='user avatar' className='rounded-full' />
+								<span className='absolute bottom-0 right-0 block w-3 h-3 bg-green-500 border-2 border-white rounded-full'></span>
+							</div>
+							<span className='text-gray-700 font-bold mt-2 text-xs'>{selectedConversation.fullName}</span>
+						</div>
 					</div>
+
+					<div className="border-b-2 border-gray-400"></div>
+
 					<Messages />
 					<MessageInput />
 				</>
@@ -31,6 +50,7 @@ const MessageContainer = () => {
 		</div>
 	);
 };
+
 export default MessageContainer;
 
 const NoChatSelected = () => {
@@ -45,6 +65,3 @@ const NoChatSelected = () => {
 		</div>
 	);
 };
-
-
-
